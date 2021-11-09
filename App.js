@@ -10,6 +10,7 @@ import CounterScreen from './src/screens/CounterScreen';
 import EffectScreen from './src/screens/EffectScreen';
 import SenderScreen from './src/screens/SenderScreen';
 import ReceiverScreen from './src/screens/ReceiverScreen';
+import ApiScreen from './src/screens/ApiScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ function App() {
         <Stack.Screen name={navigationPaths.effectScreen} component={EffectScreen} />
         <Stack.Screen name={navigationPaths.senderSceen} component={SenderScreen} />
         <Stack.Screen name={navigationPaths.receiverScreen} component={ReceiverScreen} />
+        <Stack.Screen name={navigationPaths.apiScreen} component={ApiScreen} />
       </Stack.Navigator>
        </NavigationContainer>
     </MessageProvider>

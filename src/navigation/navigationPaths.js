@@ -4,6 +4,7 @@ const counterScreen = "Counter"
 const effectScreen = "Effect"
 const senderSceen = "Sender"
 const receiverScreen = "Receiver"
+const apiScreen = "Api"
 
 export default {
     homeScreen,
@@ -12,4 +13,5 @@ export default {
     effectScreen,
     senderSceen,
     receiverScreen,
+    apiScreen,
 }

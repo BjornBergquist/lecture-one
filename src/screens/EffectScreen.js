@@ -5,8 +5,12 @@ const EffectScreen = () => {
     const [message, setMessage] = useState("Default")
     useEffect(() => {
         console.log("Load")
+        const timer = setInterval(() => {
+            console.log("2 sekunder")
+        }, 2000);
         return ()=>{
-            console.log("Return: ")
+            console.log("Unload")
+            clearInterval(timer)
         }
     }, [])
     return (
