@@ -1,17 +1,21 @@
 import React from 'react'
-import { StyleSheet, Text, View, useWindowDimensions } from 'react-native'
+import { StyleSheet, Text, View, useWindowDimensions, Platform } from 'react-native'
 import testStyle from '../shared/utils/testStyle'
 
 const LayoutScreen = () => {
-    const window = useWindowDimensions()
-    const landscape = window.width > window.height
+    // const window = useWindowDimensions()
+    const {height, width, scale, fontScale} = useWindowDimensions()
+    const landscape = width > height
 
-    const display = () =>{
-        if (landscape) {
-            return <Text>Landscape</Text>
+    const displayOsSpecific = () => {
+        if(Platform.OS === "ios"){
+            return (<Text>This will only be shown on IOS</Text>)
         } else {
-            return ( <Text> Test </Text>
-           )  
+            return (
+                <View>
+                    <Text>This will be shown on Android</Text>
+                    <View style={styles.child1}></View>
+                </View>)
         }
     }
 
@@ -20,14 +24,14 @@ const LayoutScreen = () => {
     <View style={styles.child2}></View>
     <View style={styles.child3}></View>
     <View style={styles.child4}></View> */}
-    <Text>Height: {window.height}</Text>
-    <Text>Width: {window.width}</Text>
-    <Text>Scale: {window.scale}</Text>
-    <Text>FontScale: {window.fontScale}</Text>
-    <Text>Aspect-ratio: {window.height/window.width}</Text>
+    <Text>Height: {height}</Text>
+    <Text>Width: {width}</Text>
+    <Text>Scale: {scale}</Text>
+    <Text>FontScale: {fontScale}</Text>
+    <Text>Aspect-ratio: {height/width}</Text>
     <Text>Aspect-ratio: {16/9}</Text>
     <Text style={landscape?styles.landscape:styles.portrait}>{landscape?"Landscape orientation":"Portrait orientation"}</Text>
-  
+    {displayOsSpecific()}
 </View> )
 }
 
