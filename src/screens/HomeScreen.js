@@ -31,6 +31,10 @@ const HomeScreen = ({navigation}) => {
                 title = "Go to Api Screen"
                 onPress = {() => navigation.navigate(navigationPaths.apiScreen)}
             />
+             <Button 
+                title = "Go to Layout Screen"
+                onPress = {() => navigation.navigate(navigationPaths.layoutScreen)}
+            />
         </View>
     )
 }

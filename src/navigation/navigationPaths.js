@@ -5,6 +5,7 @@ const effectScreen = "Effect"
 const senderSceen = "Sender"
 const receiverScreen = "Receiver"
 const apiScreen = "Api"
+const layoutScreen = "Layout"
 
 export default {
     homeScreen,
@@ -14,4 +15,5 @@ export default {
     senderSceen,
     receiverScreen,
     apiScreen,
+    layoutScreen,
 }
