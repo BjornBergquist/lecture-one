@@ -3,10 +3,11 @@ import { StyleSheet, Text, View } from 'react-native'
 import { MessageContext } from '../shared/provider/MessageProvider'
 
 const ReceiverScreen = () => {
-    const [message] = useContext(MessageContext)
+    const [state] = useContext(MessageContext)
     return (
         <View>
-            <Text>{message}</Text>
+            <Text>{state.message}</Text>
+            <Text>{state.count} new messages</Text>
         </View>
     )
 }
